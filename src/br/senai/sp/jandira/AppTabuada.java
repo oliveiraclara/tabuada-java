@@ -20,6 +20,8 @@ public class AppTabuada {
 		tela.fonteDoSubtitulo = new Font ("Bahnschrift", Font.BOLD, 16);
 		tela.corDoButton = new Color (60, 240, 87);
 		tela.corButton = new Color (255, 107, 9);
+		tela.corTitulo = new Color (163, 73, 164);
+		tela.corSubtitulo = new Color (112, 146, 190);
 		tela.criarTela();
 
 	}

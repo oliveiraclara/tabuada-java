@@ -30,6 +30,8 @@ public class FrameTabuada {
 	public Color corButton;
 	public Font fonteDoTitulo;
 	public Font fonteDoSubtitulo;
+	public Color corTitulo;
+	public Color corSubtitulo;
 	
 	public void criarTela() {
 		
@@ -45,26 +47,28 @@ public class FrameTabuada {
 		
 		ImageIcon imagens = new ImageIcon(getClass().getResource("calculadora-icon.png"));
 		JLabel labelimagens = new JLabel(imagens);
-		//labelimagens.setBounds(10, 30, 80, 80);
+		
 		
 		Image icon = new ImageIcon(this.getClass().getResource("calculadora-icon.png")).getImage();
-		//painel.add(labelimagens);
 		tela.setIconImage(icon);
 		
 		JLabel labelTitulo = new JLabel();
 		labelTitulo.setText("Tabuada");
 		labelTitulo.setBounds(30, 30, 250, 30);
 		labelTitulo.setFont(fonteDoTitulo);
+		labelTitulo.setForeground(corTitulo);
 		
 		JLabel labelSubtitulo = new JLabel();
 		labelSubtitulo.setText("Com essa tabuada seus problemas acabaram!!");
 		labelSubtitulo.setBounds(15, 60, 600, 30);
 		labelSubtitulo.setFont(fonteDoSubtitulo);
+		labelSubtitulo.setForeground(corSubtitulo);
 		
 		JLabel labelSubtitulo2 = new JLabel();
 		labelSubtitulo2.setText("Calcule a tabuada que desejar em segundos.");
 		labelSubtitulo2.setBounds(15, 75, 600, 30);
 		labelSubtitulo2.setFont(fonteDoSubtitulo);
+		labelSubtitulo2.setForeground(corSubtitulo);
 		
 		
 		JLabel labelMultiplicando = new JLabel();
