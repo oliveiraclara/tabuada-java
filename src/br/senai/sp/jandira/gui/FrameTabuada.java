@@ -28,6 +28,8 @@ public class FrameTabuada {
 	public Font fonteDosLabels;
 	public Color corDoButton;
 	public Color corButton;
+	public Font fonteDoTitulo;
+	public Font fonteDoSubtitulo;
 	
 	public void criarTela() {
 		
@@ -36,27 +38,33 @@ public class FrameTabuada {
 		tela.setSize(largura, altura);
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.setLayout(null);
-		Icon  IconeTabuada = new ImageIcon("src/br/senai/sp/jandira/imagens/calculadora-icon.png");
+		
 		
 		Container painel = tela.getContentPane();
 		painel.setBackground(corDeFundo);
 		
-//		JLabel labelIcone = new JLabel();
-//		labelIcone.setBounds(10, 20, 80, 80);
-//		labelIcone.setIcon(IconeTabuada);
+		ImageIcon imagens = new ImageIcon(getClass().getResource("calculadora-icon.png"));
+		JLabel labelimagens = new JLabel(imagens);
+		//labelimagens.setBounds(10, 30, 80, 80);
+		
+		Image icon = new ImageIcon(this.getClass().getResource("calculadora-icon.png")).getImage();
+		//painel.add(labelimagens);
+		tela.setIconImage(icon);
 		
 		JLabel labelTitulo = new JLabel();
 		labelTitulo.setText("Tabuada");
 		labelTitulo.setBounds(30, 30, 250, 30);
-		labelTitulo.setFont(fonteDosLabels);
+		labelTitulo.setFont(fonteDoTitulo);
 		
 		JLabel labelSubtitulo = new JLabel();
 		labelSubtitulo.setText("Com essa tabuada seus problemas acabaram!!");
-		labelSubtitulo.setBounds(30, 60, 600, 30);
+		labelSubtitulo.setBounds(15, 60, 600, 30);
+		labelSubtitulo.setFont(fonteDoSubtitulo);
 		
 		JLabel labelSubtitulo2 = new JLabel();
 		labelSubtitulo2.setText("Calcule a tabuada que desejar em segundos.");
-		labelSubtitulo2.setBounds(30, 70, 600, 30);
+		labelSubtitulo2.setBounds(15, 75, 600, 30);
+		labelSubtitulo2.setFont(fonteDoSubtitulo);
 		
 		
 		JLabel labelMultiplicando = new JLabel();
@@ -97,6 +105,7 @@ public class FrameTabuada {
 		JScrollPane scroll =  new JScrollPane(listResultados);
 		
 		scroll.setBounds(30, 350, 320, 140);
+		painel.add(scroll);
 		
 		buttonCalcular.addActionListener(new ActionListener() {
 			
@@ -115,6 +124,7 @@ public class FrameTabuada {
 					tabuada.maximoMultiplicador = Integer.parseInt(textMaximoMultiplicador.getText());
 					String[] resultados = tabuada.getTabuada();
 					listResultados.setListData(resultados);
+					scroll.setVisible(true);
 				}
 
 				
@@ -129,12 +139,11 @@ public class FrameTabuada {
 				textMultiplicando.setText("");
 				textMinimoMultiplicador.setText("");
 				textMaximoMultiplicador.setText("");
-				scroll.setToolTipText("");
+				scroll.setVisible(false);
 				
 			}
 		});
 		
-		//painel.add(labelIcone);
 		painel.add(labelTitulo);
 		painel.add(labelSubtitulo);
 		painel.add(labelSubtitulo2);

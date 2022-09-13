@@ -16,6 +16,8 @@ public class AppTabuada {
 		tela.altura = 550;
 		tela.corDeFundo = new Color (255, 255, 255);
 		tela.fonteDosLabels = new Font ("Bahnschrift", Font.BOLD, 14);
+		tela.fonteDoTitulo = new Font ("Bahnschrift", Font.BOLD, 20);
+		tela.fonteDoSubtitulo = new Font ("Bahnschrift", Font.BOLD, 16);
 		tela.corDoButton = new Color (60, 240, 87);
 		tela.corButton = new Color (255, 107, 9);
 		tela.criarTela();
